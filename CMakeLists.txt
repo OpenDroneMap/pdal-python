@@ -25,8 +25,8 @@ find_package(Python3 COMPONENTS Interpreter Development NumPy REQUIRED)
 # find PDAL. Require 2.1+
 find_package(PDAL 2.4 REQUIRED)
 
-# find PyBind11
-find_package(pybind11 REQUIRED)
+# Add PyBind11
+add_subdirectory(pybind11)
 
 set(extension "libpdalpython")
 pybind11_add_module(${extension} MODULE
