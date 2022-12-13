@@ -20,7 +20,11 @@ else()
 endif()
 
 # find Python3
+if (NOT PYTHON3_EXECUTABLE)
 find_package(Python3 COMPONENTS Interpreter Development NumPy REQUIRED)
+endif()
+
+message("Python: ${PYTHON3_EXECUTABLE}")
 
 # find PDAL. Require 2.1+
 find_package(PDAL 2.4 REQUIRED)
